@@ -14,8 +14,6 @@ db_connection_name = 'hack-aso-grupo-10:us-central1:spotmusic-hacka'
 #db_local_host = os.environ.get('DB_LOCAL_HOST')
 #db_connection_name = os.environ.get('CLOUD_SQL_CONNECTION_NAME')
 
-
-
 def open_connection():
     try:
         if db_connection_name:
