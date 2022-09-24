@@ -59,7 +59,7 @@ jobs:
         uses: 'google-github-actions/deploy-cloudrun@v0'
         with:
           service: 'hack10-cloud-run'
-          image_url: ${{ secrets.ARTIFACT_REGISTRY_REPO }}/myapp:latest
+          image: ${{ secrets.ARTIFACT_REGISTRY_REPO }}/myapp:latest
 
 
 
