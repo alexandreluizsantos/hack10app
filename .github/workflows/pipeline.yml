@@ -5,7 +5,7 @@ name: Hack10 Pipeline
 on: 
   push:
     branches:
-      - pipedev
+      - main
 
 jobs:
   Build:
