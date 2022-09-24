@@ -2,8 +2,8 @@ import os
 import pymysql
 from flask import jsonify
 
-db_user = 'hacha10'
-db_password = 'hacha10'
+db_user = 'root'
+db_password = 'spotmusic'
 db_name = 'spotmusic-hacka'
 db_local_host = '34.67.75.230'
 db_connection_name = 'hack-aso-grupo-10:us-central1:spotmusic-hacka'
