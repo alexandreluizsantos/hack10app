@@ -38,6 +38,7 @@ jobs:
           CLOUD_SQL_DATABASE_NAME: ${{ secrets.CLOUD_SQL_DATABASE_NAME }}
           DB_LOCAL_HOST: ${{ secrets.DB_LOCAL_HOST }}
           CLOUD_SQL_CONNECTION_NAME: ${{ secrets.CLOUD_SQL_CONNECTION_NAME }}
+          echo '${{ secrets.CLOUD_SQL_DATABASE_NAME }}
         run: | 
           docker build -t ${{ secrets.ARTIFACT_REGISTRY_REPO }}/myapp:latest .
           docker push ${{ secrets.ARTIFACT_REGISTRY_REPO }}/myapp:latest        
