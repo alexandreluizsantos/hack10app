@@ -21,3 +21,18 @@ jobs:
 
       - name: Install Requirements
         run:  pip install flask flask-wtf flask-cors PyMySQL cryptography gunicorn
+
+      - name: Docker Login
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+          ARTIFACT_REGISTRY:  ${{ secrets.ARTIFACT_REGISTRY}}
+        run: | 
+          echo '${{ secrets.GOOGLE_CREDENTIALS }}' > key.json
+          cat key.json | docker login -u _json_key --password-stdin ${{ secrets.ARTIFACT_REGISTRY }}
+
+      - name: Build Image & Push
+        env: 
+          ARTIFACT_REGISTRY_REPO: ${{ secrets.ARTIFACT_REGISTRY_REPO }}
+        run: | 
+          docker build -t ${{ secrets.ARTIFACT_REGISTRY_REPO }}/myapp:latest .
+          docker push ${{ secrets.ARTIFACT_REGISTRY_REPO }}/myapp:latest        
